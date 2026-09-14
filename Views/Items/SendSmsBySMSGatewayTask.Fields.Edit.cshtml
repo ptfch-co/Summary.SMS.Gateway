@@ -3,18 +3,6 @@
 <div class="row">
   <div class="col-md-3">
     <div class="form-group">
-      <label asp-for="Phone_Number">
-        شماره همراه<span class="text-danger">*</span>
-      </label>
-      <input type="text" asp-for="Phone_Number" class="form-control" />
-      <span class="hint">
-        در این فیلد شماره همراهی که قصد ارسال پیامک به آن را دارید وارد نمایید.
-        مقداردهی این فیلد الزامی است.
-      </span>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="form-group">
       <label>
         سیم کارت<span class="text-danger">*</span>
       </label>
@@ -25,6 +13,18 @@
       </select>
       <span class="hint">
         در این فیلد سیم کارتی که قصد ارسال پیامک از آن را دارید انتخاب نمایید.
+        مقداردهی این فیلد الزامی است.
+      </span>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label asp-for="Phone_Number">
+        شماره همراه<span class="text-danger">*</span>
+      </label>
+      <input type="text" asp-for="Phone_Number" class="form-control" />
+      <span class="hint">
+        در این فیلد شماره همراهی که قصد ارسال پیامک به آن را دارید وارد نمایید.
         مقداردهی این فیلد الزامی است.
       </span>
     </div>
