@@ -1,1 +1,40 @@
 @model Summary.SMS.Gateway.Settings.SMSGatewaySettings
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="form-group">
+      <label>
+        نام کاربری<span class="text-danger">*</span>
+      </label>
+      <input type="text" class="form-control" asp-for="Username" />
+      <span class="hint">
+        به منظور ارتباط پلتفرم سامری با سیم کارت تلفن همراه، نام کاربری 
+        ارائه شده توسط واحد پشتیبانی را در این قسمت وارد نمایید.
+      </span>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label>
+        گذرواژه<span class="text-danger">*</span>
+      </label>
+      <input type="text" class="form-control" asp-for="Password" />
+      <span class="hint">
+        به منظور ارتباط پلتفرم سامری با سیم کارت تلفن همراه، گذرواژه 
+        ارائه شده توسط واحد پشتیبانی را در این قسمت وارد نمایید.
+      </span>
+    </div>
+  </div>
+    <div class="col-md-3">
+    <div class="form-group">
+      <label>
+        شناسه تلفن همراه<span class="text-danger">*</span>
+      </label>
+      <input type="text" class="form-control" asp-for="Device_Id" />
+      <span class="hint">
+        در این فیلد شناسه تلفن همراهی که سیم کارت در آن قرار دارد را وارد نمایید.
+        این شناسه توسط واحد پشتیبانی ارائه می‌شود.
+      </span>
+    </div>
+  </div>
+</div>
