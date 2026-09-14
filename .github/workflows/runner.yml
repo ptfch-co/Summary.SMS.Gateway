@@ -1,0 +1,18 @@
+name: Build Module
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: ptfch-co/ci.pipelines/.github/workflows/dotnet-build.yml@main
+    with:
+      module_name: ${{ github.event.repository.name }}
