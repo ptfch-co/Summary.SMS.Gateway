@@ -9,13 +9,14 @@ namespace Summary.SMS.Gateway.Settings
     using Core.Workflows;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Http;
-    using Microsoft.Extensions.Logging;
     using Microsoft.Extensions.Options;
-    using Services;
     using System.Threading.Tasks;
 
     public class SMSGatewaySettings
     {
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Device_Id { get; set; }
     }
 
     public class SMSGatewaySettingsDisplayDriver : SectionDisplayDriver<ISite,
@@ -25,19 +26,16 @@ namespace Summary.SMS.Gateway.Settings
         private readonly ShellSettings _shell;
         private readonly IHttpContextAccessor _httpAccessor;
         private readonly IAuthorizationService _authorize;
-        private readonly ISMSGatewayService _client;
 
         public SMSGatewaySettingsDisplayDriver(IShellHost host,
             ShellSettings settings,
             IHttpContextAccessor httpContext,
-            IAuthorizationService authorize,
-            ISMSGatewayService client)
+            IAuthorizationService authorize)
         {
             _host = host;
             _shell = settings;
             _httpAccessor = httpContext;
             _authorize = authorize;
-            _client = client;
         }
 
         public override async Task<IDisplayResult> EditAsync(SMSGatewaySettings settings,
@@ -48,7 +46,9 @@ namespace Summary.SMS.Gateway.Settings
 
             var init = Initialize<SMSGatewaySettings>("SMS_GatewaySettings_Edit", model =>
             {
-                
+                model.Username = settings.Username;
+                model.Password = settings.Password;
+                model.Device_Id = settings.Device_Id;
             });
 
             return init.Location("Content:5").OnGroup("SMS.Gateway");
@@ -82,6 +82,9 @@ namespace Summary.SMS.Gateway.Settings
         public void Configure(SMSGatewaySettings options)
         {
             var settings = _site.GetSiteSettingsAsync().GetAwaiter().GetResult().As<SMSGatewaySettings>();
+            options.Username = settings.Username;
+            options.Password = settings.Password;
+            options.Device_Id = settings.Device_Id;
         }
     }
 }

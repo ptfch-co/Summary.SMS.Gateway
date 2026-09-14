@@ -1,0 +1,14 @@
+@model ActivityViewModel<Summary.SMS.Gateway.Workflows.Task.SMS.Send.SendSmsBySMSGatewayTask>
+
+@using Core.Workflows.Helpers
+@using Core.Workflows.ViewModels
+@using Summary.SMS.Gateway
+
+<header>
+    <h4>
+        @Model.Activity.GetTitleOrDefault(() => T[SMSGateway.Localize.SOfSMSGateway])
+    </h4>
+    <em>
+        &quot;SMS.Gateway - Send Message&quot;
+    </em>
+</header>

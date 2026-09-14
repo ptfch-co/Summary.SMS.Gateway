@@ -1,0 +1,44 @@
+@model Summary.SMS.Gateway.Workflows.Task.SMS.Send.SendSmsBySMSGatewayViewModel
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="form-group">
+      <label asp-for="Phone_Number">
+        شماره همراه<span class="text-danger">*</span>
+      </label>
+      <input type="text" asp-for="Phone_Number" class="form-control" />
+      <span class="hint">
+        در این فیلد شماره همراهی که قصد ارسال پیامک به آن را دارید وارد نمایید.
+        مقداردهی این فیلد الزامی است.
+      </span>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="form-group">
+      <label>
+        سیم کارت<span class="text-danger">*</span>
+      </label>
+      <select asp-for="Sim_Slot" class="form-control">
+        <option value=""></option>
+        <option value="1">سیم کارت 1</option>
+        <option value="2">سیم کارت 2</option>
+      </select>
+      <span class="hint">
+        در این فیلد سیم کارتی که قصد ارسال پیامک از آن را دارید انتخاب نمایید.
+        مقداردهی این فیلد الزامی است.
+      </span>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <label asp-for="Message">
+        متن پیامک کوتاه<span class="text-danger">*</span>
+      </label>
+      <textarea asp-for="Message" rows="5" class="form-control"></textarea>
+      <span class="hint">
+        در این فیلد متن پیامک کوتاه خود را وارد نمایید.
+        مقداردهی این فیلد الزامی است.
+      </span>
+    </div>
+  </div>
+</div>
