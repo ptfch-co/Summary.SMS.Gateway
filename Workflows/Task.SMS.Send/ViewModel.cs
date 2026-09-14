@@ -9,6 +9,6 @@ namespace Summary.SMS.Gateway.Workflows.Task.SMS.Send
         [Required]
         public string Phone_Number { get; set; }
         [Required]
-        public int Sim_Slot { get; set; }
+        public int? Sim_Slot { get; set; }
     }
 }

@@ -46,9 +46,9 @@ namespace Summary.SMS.Gateway.Workflows.Task.SMS.Send
             set => SetProperty(value);
         }
 
-        public int Sim_Slot
+        public int? Sim_Slot
         {
-            get => GetProperty(() => 1);
+            get => GetProperty(() => default(int?));
             set => SetProperty(value);
         }
 
@@ -62,7 +62,7 @@ namespace Summary.SMS.Gateway.Workflows.Task.SMS.Send
             await _gateway.SendSmsAsync(
                 message,
                 phone_number,
-                sim_slot
+                sim_slot.Value
             );
 
             return Outcomes(SMSGateway.Workflows.Done);
