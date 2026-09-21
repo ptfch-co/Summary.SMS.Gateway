@@ -29,13 +29,13 @@ namespace Summary.SMS.Gateway.Controllers.API.V1
         {
             var data = new Dictionary<string, object>
             {
-                { "Sms.Gateway.DeviceId", model.DeviceId },
-                { "Sms.Gateway.Id", model.Id },
-                { "Sms.Gateway.Webhook.Id", model.WebhookId },
-                { "Sms.Gateway.Message", model.Payload.Message },
-                { "Sms.Gateway.ReceivedAt", model.Payload.ReceivedAt.ToString("MM/dd/yyyy hh:mm:ss") },
-                { "Sms.Gateway.Sender", model.Payload.Sender },
-                { "Sms.Gateway.SIM", model.Payload.SimNumber }
+                { "Mobile.SMS.DeviceId", model.DeviceId },
+                { "Mobile.SMS.Id", model.Id },
+                { "Mobile.SMS.Webhook.Id", model.WebhookId },
+                { "Mobile.SMS.Message", model.Payload.Message },
+                { "Mobile.SMS.ReceivedAt", model.Payload.ReceivedAt.ToString("MM/dd/yyyy hh:mm:ss") },
+                { "Mobile.SMS.Sender", model.Payload.Sender },
+                { "Mobile.SMS.SIM", model.Payload.SimNumber }
             };
 
             await _workflow.TriggerIntoDBAsync(
