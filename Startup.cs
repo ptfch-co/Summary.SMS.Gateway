@@ -10,6 +10,7 @@ namespace Summary.SMS.Gateway
     using Summary.SMS.Gateway.Settings;
     using Summary.SMS.Gateway.Services;
     using Summary.SMS.Gateway.Workflows.Task.SMS.Send;
+    using Summary.SMS.Gateway.Workflows.Event.SMS.Receive;
 
     [Feature(SMSGateway.Features.SMSGateway)]
     public class Startup : StartupBase
@@ -21,6 +22,7 @@ namespace Summary.SMS.Gateway
             services.AddScoped<ISMSGatewayService, SMSGatewayService>();
 
             services.AddActivity<SendSmsBySMSGatewayTask, SendSmsBySMSGatewayDisplay>();
+            services.AddActivity<ReceiveMessageInSmsGatewayEvent, ReceiveMessageInSmsGatewayDisplay>();
 
             services.AddTransient<IConfigureOptions<SMSGatewaySettings>, SMSGatewaySettingsConfiguration>();
         }

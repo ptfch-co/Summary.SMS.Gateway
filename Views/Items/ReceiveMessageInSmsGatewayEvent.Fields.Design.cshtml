@@ -1,0 +1,14 @@
+@model ActivityViewModel<Summary.SMS.Gateway.Workflows.Event.SMS.Receive.ReceiveMessageInSmsGatewayEvent>
+
+@using Core.Workflows.Helpers
+@using Core.Workflows.ViewModels
+@using Summary.SMS.Gateway
+
+<header>
+    <h4>
+        @Model.Activity.GetTitleOrDefault(() => T[SMSGateway.Localize.SOfReceiveWebhookMessage])
+    </h4>
+    <em>
+        &quot;SMS.Gateway - Receive Message&quot;
+    </em>
+</header>

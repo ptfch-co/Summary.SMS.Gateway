@@ -23,6 +23,8 @@ namespace Summary.SMS.Gateway
             public const string DOfSMSGateway = "مجموعه ای از رخداد و تسک‌ها جهت ارسال و دریافت پیامک با درگاه پیامک از طریق سیم کارت.";
             public const string SOfSendMessage = "ارسال پیامک از طریق درگاه سیم کارت";
             public const string DOfSendMessage = "فعالیتی جهت ارسال پیامک از طریق درگاه سیم کارت با عبور از لیست سیاه و با قابلیت انتخاب سیم کارت.";
+            public const string SOfReceiveWebhookMessage = "رویداد دریافت پیامک سیم کارت";
+            public const string DOfReceiveWebhookMessage = "هنگام دریافت هر پیامک کوتاه از طریق سیم کارت، این رویداد فراخوانی می‌شود.";
         }
     }
 }
