@@ -32,6 +32,8 @@ namespace Summary.SMS.Gateway.Services
             string phone_number,
             int sim_slot)
         {
+            message = message.ConvertHtmlToSmsFormat();
+
             var data = new
             {
                 DeviceId = _options.Device_Id,
