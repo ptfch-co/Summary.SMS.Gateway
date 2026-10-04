@@ -32,6 +32,8 @@ namespace Summary.SMS.Gateway.Services
             string phone_number,
             int sim_slot)
         {
+            if (phone_number.IsMobileNo() is false) return;
+
             message = message.ConvertHtmlToSmsFormat();
 
             var data = new
